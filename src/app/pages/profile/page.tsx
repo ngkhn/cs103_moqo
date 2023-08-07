@@ -8,7 +8,6 @@ export default function Profile() {
   const profile = {
     name: "John Doe",
     email: "john.doe@example.com",
-    address: "1234 Main St",
   };
     return(
       <div className="bg-cover bg-center min-h-screen custom_bg">
@@ -50,12 +49,6 @@ export default function Profile() {
                     <h3 className="text-yellow-200 text-xl my-1 font-semibold">Email</h3>
                     <div className="rounded-lg bg-white w-96 flex justify-center my-1 p-1">
                       <p className="text-black font-medium">{profile.email}</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center my-2">
-                    <h3 className="text-yellow-200 text-xl my-1 font-semibold">Address</h3>
-                    <div className="rounded-lg bg-white w-96 flex justify-center my-1 p-1">
-                      <p className="text-black font-medium">{profile.address}</p>
                     </div>
                   </div>
                 </div>
