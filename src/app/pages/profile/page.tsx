@@ -7,7 +7,6 @@ import MaleImage from "../../../../public/male.png";
 export default function Profile() {
   const profile = {
     name: "John Doe",
-    phone:"1234567890",
     email: "john.doe@example.com",
     address: "1234 Main St",
   };
@@ -18,18 +17,18 @@ export default function Profile() {
           <div
           className="lg:flex overflow-hidden shadow-lg border-2"
           style={{
-            borderRadius: "20px", 
+            borderRadius: "20px",
             //marginTop: "5rem"// Border radius
           }}>
             <div className="px-16 pt-10 bg-white">
               <div
                 className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden rounded-full border-4 border-black"
                 title="Woman holding a mug">
-                <Image  
+                <Image
                     src={MaleImage} // Image path
                     alt={"Image of Male"}/>
-                  
-              </div> 
+
+              </div>
               <div className="mt-3 flex flex-col items-center">
                 <button className="rounded-full bg-black text-yellow-200 font-bold px-5 py-2 mt-1 mb-4 text-sm" >Change Photo</button>
                 <button className="text-stone-400 font-bold text-lg mt-1">My Info</button>
@@ -51,12 +50,6 @@ export default function Profile() {
                     <h3 className="text-yellow-200 text-xl my-1 font-semibold">Email</h3>
                     <div className="rounded-lg bg-white w-96 flex justify-center my-1 p-1">
                       <p className="text-black font-medium">{profile.email}</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center my-2">
-                    <h3 className="text-yellow-200 text-xl my-1 font-semibold">Phone Number</h3>
-                    <div className="rounded-lg bg-white w-96 flex justify-center my-1 p-1">
-                      <p className="text-black font-medium">{profile.phone}</p>
                     </div>
                   </div>
                   <div className="flex flex-col items-center justify-center my-2">

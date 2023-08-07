@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar/Navbar"
 import Searchbar from "@/components/SearchBar/Search"
 import SearchButton from "@/components/Button/SearchButton";
 import "tailwindcss/tailwind.css"
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 export default function Home() {
   return (
     <main className="bg-cover bg-center min-h-screen custom_bg">
@@ -30,4 +32,3 @@ export default function Home() {
     </main>
   );
 }
-

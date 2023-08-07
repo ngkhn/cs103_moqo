@@ -5,32 +5,27 @@ import { useRouter } from "next/navigation";
 
 const RegisterForm = (props: any) => {
     const router= useRouter();
-    const [formData, setFormData] = useState({name:"", email: "",phone :"", password: "", confirmPassword:"",  });
-    const [error, setError] = useState({name:"", email: "",phone :"", password: "", confirmPassword:"",  });
+    const [formData, setFormData] = useState({name:"", email: "", password: "", confirmPassword:"",  });
+    const [error, setError] = useState({name:"", email: "", password: "", confirmPassword:"",  });
     const [loading, setLoding] = useState<Boolean>(false);
     const [passwordMatch, setPasswordMatch] = useState<Boolean>(true);
-    
+
     const HandleSumbit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setLoding(true);
-        
+
         let hasError = false;
 
         if (!formData.name) {
             setError((prevError) => ({ ...prevError, name: "Name is required" }));
             hasError = true;
         }
-        
+
         if (!formData.email) {
             setError((prevError) => ({ ...prevError, email: "Email is required" }));
             hasError = true;
         }
 
-        if (!formData.phone) {
-            setError((prevError) => ({ ...prevError, phone: "Phone Number is required" }));
-            hasError = true;
-        }
-        
         if (!formData.password) {
             setError((prevError) => ({ ...prevError, password: "Password is required" }));
             hasError = true;
@@ -59,7 +54,7 @@ const RegisterForm = (props: any) => {
         //register form
         <form className="flex flex-col justify-center items-center" onSubmit={HandleSumbit}>
                 <div className="flex flex-col justify-center items-center my-1">
-                    <input className="rounded-full px-4 py-2 w- bg-white bg-inherit text-black outline-none" type="text" 
+                    <input className="rounded-full px-4 py-2 w- bg-white bg-inherit text-black outline-none" type="text"
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Username" />
                     {!formData.name && ( // If there's an error, display it
@@ -67,7 +62,7 @@ const RegisterForm = (props: any) => {
                     )}
                 </div>
                 <div className="flex flex-col justify-center items-center my-1">
-                    <input className="rounded-full px-4 py-2 w- bg-white bg-inherit text-black outline-none" type="email" 
+                    <input className="rounded-full px-4 py-2 w- bg-white bg-inherit text-black outline-none" type="email"
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="Email" />
                     {!formData.email && ( // If there's an error, display it
@@ -75,15 +70,7 @@ const RegisterForm = (props: any) => {
                     )}
                 </div>
                 <div className="flex flex-col justify-center items-center my-1">
-                    <input className="rounded-full px-4 py-2 w- bg-white bg-inherit text-black outline-none" type="tel" 
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    placeholder="Phone Number" />
-                    {!formData.phone && ( // If there's an error, display it
-                        <p className="text-red-500 text-xs italic mt-1">{error.phone}</p>
-                    )}
-                </div>
-                <div className="flex flex-col justify-center items-center my-1">
-                    <input className="rounded-full px-4 py-2 w-64 bg-white bg-inherit text-black outline-none" type="password" 
+                    <input className="rounded-full px-4 py-2 w-64 bg-white bg-inherit text-black outline-none" type="password"
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     placeholder="Password" />
                     {!formData.password && ( // If there's an error, display it
@@ -100,7 +87,7 @@ const RegisterForm = (props: any) => {
                         <p className="text-red-500 text-xs italic mt-1">{error.confirmPassword}</p>
                     )}
                 </div>
-                
+
                 <div className="flex justify-center mt-4">
                     <div className="border-2 rounded-full bg-gradient border-login-btn w-64 flex items-center justify-center">
                         <button className="rounded-full px-4 py-2 bg-inherit text-white font-bold" type="submit">Sign Up</button>
